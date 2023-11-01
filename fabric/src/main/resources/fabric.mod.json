@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "totemcurse",
+  "version": "${version}",
+
+  "name": "TotemCurse",
+  "description": "",
+  "authors": [],
+  "contact": {},
+
+  "license": "GNU GPL 3.0",
+  "icon": "icon.png",
+
+  "environment": "*",
+  "entrypoints": {},
+  "mixins": [
+    "totemcurse.mixins.json",
+    "totemcurse-common.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.24",
+    "minecraft": ">=1.19.2"
+  }
+}
