@@ -14,6 +14,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.loading.FMLPaths;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -37,7 +38,7 @@ public class TotemCurse {
         MinecraftForge.EVENT_BUS.register(this);
 
         EFFECTS.register(modEventBus);
-        var cfgfile = Minecraft.getInstance().gameDirectory.toPath().resolve("config").resolve("TotemCooldown.json").toFile();
+        var cfgfile = FMLPaths.CONFIGDIR.get().resolve("TotemCooldown.json").toFile();
         var config = FileReadWrite.read(cfgfile);
         if(config.equals("")){
             FileReadWrite.write(cfgfile, String.valueOf(effectLength));
